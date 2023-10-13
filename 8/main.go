@@ -1,6 +1,6 @@
 package main
 
-// funções
+// funçõesjhgjhgjhg
 func main() {
 
 }
