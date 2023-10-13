@@ -1,22 +1,16 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-)
+import "fmt"
 
-// funçõesjhgjhgjhg
+// funções variadicas
 func main() {
-	valor, err := sum(1, 50)
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(valor)
+	fmt.Println(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 }
 
-func sum(a int, b int) (int, error) {
-	if a+b >= 50 {
-		return 400, errors.New("a soma é maior que 50 ")
+func sum(numeros ...int) int {
+	total := 0
+	for _, numero := range numeros {
+		total += numero
 	}
-	return a + b, nil
+	return total
 }
