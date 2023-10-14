@@ -1,22 +1,24 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 )
 
-// funçõesjhgjhgjhg
-func main() {
-	valor, err := sum(1, 50)
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(valor)
+type Cliente struct {
+	nome  string
+	idade int
+	ativo bool
 }
 
-func sum(a int, b int) (int, error) {
-	if a+b >= 50 {
-		return 400, errors.New("a soma é maior que 50 ")
+// funçõesjhgjhgjhg
+func main() {
+
+	renato := Cliente{
+		nome:  "Renato",
+		idade: 40,
+		ativo: true,
 	}
-	return a + b, nil
+
+	fmt.Printf("Nome: %s\nIdade: %d\nAtivo:%t\n", renato.nome, renato.idade, renato.ativo)
+
 }
