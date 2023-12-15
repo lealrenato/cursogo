@@ -24,7 +24,9 @@ type ViaCEP struct {
 // chamadas http
 func main() {
 	for _, cep := range os.Args[1:] {
+
 		req, err := http.Get("http://viacep.com.br/ws/" + cep + "/json/")
+
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "erro ao fazer requisição:%v\n", err)
 		}
@@ -49,6 +51,8 @@ func main() {
 		}
 		defer file.Close()
 		_, err = file.WriteString(fmt.Sprintf("Cep: %s, Localidade: %s, UF: %s", data.Cep, data.Localidade, data.Uf))
+		fmt.Println("Arquivo criado com sucesso")
+		fmt.Println("Cidade: ", data.Localidade)
 
 	}
 
